@@ -8,7 +8,8 @@ import java.util.List;
 /**
  * Created by codecadet on 26/07/2018.
  */
-public class UserServiceimpl implements UserService{
+public class UserServiceimpl implements UserService {
+
 
 
     @Override
