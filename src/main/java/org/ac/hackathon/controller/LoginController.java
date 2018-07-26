@@ -10,12 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 @RequestMapping("/")
-public class login {
-
+public class LoginController {
+/*
     @RequestMapping(method = RequestMethod.GET, path = {"/login", "/", ""})
     public String listCustomers(Model model) {
-        model.addAttribute("customers", customerToCustomerDto.convert(customerService.list()));
-        return "customer/list";
+        return "redirect:/login";
     }
-
+*/
+    @RequestMapping("/")
+    public String home() {
+        return "login";
+    }
 }
