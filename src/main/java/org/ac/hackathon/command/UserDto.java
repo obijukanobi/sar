@@ -1,23 +1,23 @@
-package org.ac.hackathon;
+package org.ac.hackathon.command;
+
+import org.ac.hackathon.Requests;
 
 import java.util.LinkedList;
 
 /**
  * Created by codecadet on 26/07/2018.
  */
-public class User {
+public class UserDto {
 
     private int id;
     private String name;
     private String local;
     private String contact;
-    private String password;
     private String photo;
 
-    private LinkedList <String> foodPreferences;
+    private LinkedList<String> foodPreferences;
     private LinkedList <String> themePreferences;
     private LinkedList <Requests> requests;
-
 
     public int getId() {
         return id;
@@ -49,14 +49,6 @@ public class User {
 
     public void setContact(String contact) {
         this.contact = contact;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getPhoto() {
