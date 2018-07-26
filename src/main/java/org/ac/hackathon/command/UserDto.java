@@ -9,7 +9,7 @@ import java.util.LinkedList;
  */
 public class UserDto {
 
-    private int id;
+    private Integer id;
     private String name;
     private String local;
     private String contact;
@@ -19,7 +19,7 @@ public class UserDto {
     private LinkedList <String> themePreferences;
     private LinkedList <Requests> requests;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

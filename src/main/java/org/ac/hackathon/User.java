@@ -7,7 +7,7 @@ import java.util.LinkedList;
  */
 public class User {
 
-    private int id;
+    private Integer id;
     private String name;
     private String local;
     private String contact;
@@ -19,7 +19,7 @@ public class User {
     private LinkedList <Requests> requests;
 
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
