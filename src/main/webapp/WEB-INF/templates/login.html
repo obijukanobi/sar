@@ -11,7 +11,7 @@
     <div class="login-row col-sm-10">
         <h2 class="title">Matcher</h2>
         <div class="col-sm-12">
-            <form class="form-horizontal" th:action="@{/profile}" method="post">
+            <form class="form-horizontal" th:object="${user}" th:action="@{/profile}" method="post">
 
                 <div class="form-group">
                     <div class="col-sm-12">

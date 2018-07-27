@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header"/>
+</head>
+<body>
+<div class="container">
+
+    <div th:replace="action :: action"></div>
+
+    <h2>User List</h2>
+
+    <div th:if="${not #lists.isEmpty(users)}">
+        <table class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Show</th>
+            </tr>
+            <tr th:each="request : ${requests}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.local}"></td>
+                <td><a class="btn btn-success" th:href="@{'/user/' + ${user.id}}">Show</a></td>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
