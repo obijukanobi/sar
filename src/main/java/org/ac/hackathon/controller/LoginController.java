@@ -4,6 +4,7 @@ import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.command.UserDto;
 import org.ac.hackathon.converters.DtotoUser;
 import org.ac.hackathon.converters.UserToDto;
+import org.ac.hackathon.services.RequestService;
 import org.ac.hackathon.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,8 +25,9 @@ import java.util.List;
 @Controller
 @RequestMapping("")
 public class LoginController {
-    private UserService userService;
 
+    private UserService userService;
+    private RequestService requestService;
     private UserToDto userToDto;
     private DtotoUser dtotoUser;
 
@@ -98,7 +100,25 @@ public class LoginController {
         this.dtotoUser = dtotoUser;
     }
 
+    public UserService getUserService() {
+        return userService;
+    }
 
+    public RequestService getRequestService() {
+        return requestService;
+    }
+    @Autowired
+    public void setRequestService(RequestService requestService) {
+        this.requestService = requestService;
+    }
+
+    public UserToDto getUserToDto() {
+        return userToDto;
+    }
+
+    public DtotoUser getDtotoUser() {
+        return dtotoUser;
+    }
 
     @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
     public String regist() {
@@ -128,11 +148,32 @@ public class LoginController {
         return "matchtoinvite";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=invitations")
-    public String invites(Model model) {
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/matchAccept"}, params = "action=matchtoinvite")
+    public String match(Model model) {
+
+        UserDto userDto = new UserDto();
+        userDto.setContact("Lisboa");
+        userDto.setPhoto("94534");
 
 
-        return "matchlist";
+        model.addAttribute("user", dtotoUser.convert(userDto));
+
+
+        return "connectedcontact";
     }
+
+
+    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
+    public String acceptInvite(@PathVariable Integer id, Model model) {
+
+
+        User user = userService.getUser(id);
+
+        model.addAttribute("user", userToDto.convert(user));
+
+        return "profile";
+    }
+
 
 }
