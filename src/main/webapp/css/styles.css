@@ -1,32 +1,52 @@
+body{
+    background: #e66f4b !important;
+}
+
 .btn{
-    width: 400px;
-    height: 70px;
-    object-fit: contain;
-    background-color: #0072bc;
+    height: 120px;
+    margin-top: 20px;
+    font-size: 40px !important;
+    font-family: 'Roboto', sans-serif;
+
 }
 
 .input{
-    min-width: 500px;
-    height: 70px;
+    height: 120px;
     object-fit: contain;
-    background-color: #ebebeb;
-    font-size: 20px;
+    font-size: 40px !important;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
+.form-horizontal .row{
+    margin-top: 50px;
+}
+/*
 .full{
     display: grid;
     width: auto;
     height: 100vw;
 }
-
+*/
 .title{
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 70px;
     padding: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     color: aliceblue;
+    text-align: center;
 }
 
+.registertitle{
+    font-family: 'Roboto', sans-serif;
+    font-size: 70px;
+    padding: 5px;
+    margin-bottom: 80px;
+    margin-top: 70px;
+    color: aliceblue;
+    text-align: center;
+}
+/*
 .form-group label{
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
@@ -38,7 +58,7 @@
 .form-group div{
     display: inline-flex;
     clear: right;
-}
+}*/
 
 
 

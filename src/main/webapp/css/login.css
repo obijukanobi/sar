@@ -1,4 +1,4 @@
-.container, .full{
+body{
     background-image: url("/matching/img/login-back.jpg");
    /* background-size: cover;
     background-repeat: no-repeat;
@@ -9,6 +9,7 @@
     height: -moz-available;
     height: -webkit-fill-available;
     height: fill-available;*/
+    background-repeat: repeat-y;
 }
 
 /*.login-row{
@@ -19,7 +20,7 @@
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-}
+}*/
 
 
 .full > div {
@@ -27,15 +28,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top:30vw;
 }
 
-@media only screen and (max-width: 768px) {
+/*@media only screen and (min-width: 900px) {
 
-    .form-group{
-        max-width: 90%;
+    .full > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top:0vw;
     }
 
-    .input {
-        width: 100%;
+    .login-row{
+        max-width: 800px;
     }
 }*/
