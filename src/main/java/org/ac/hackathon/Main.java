@@ -15,15 +15,37 @@ public class Main {
         user.setLocal("Lisboa");
         user.setContact("9999999999");
 
-        LinkedList  requests =  new LinkedList();
-        LinkedList linkedList2 = new LinkedList();
-        LinkedList linkedList3 = new LinkedList();
+        LinkedList requests = new LinkedList();
+        LinkedList foodPreferences = new LinkedList();
+        LinkedList themesPreferences = new LinkedList();
+
+        requests.add("banana");
+        requests.add("cenoura");
+        requests.add("batata");
+
+        foodPreferences.add("Couve lombarda");
+        foodPreferences.add("Couve Roxa");
+        foodPreferences.add("Alface");
+
+        themesPreferences.add("Ikea Chairs");
+        themesPreferences.add("Blue Sky");
+        themesPreferences.add("Special Dolls");
+
+        user.setRequests(requests);
+        user.setRequests(foodPreferences);
+        user.setRequests(themesPreferences);
 
 
+        System.out.println(requests);
+        System.out.println(foodPreferences);
+        System.out.println(themesPreferences);
+        System.out.println(user);
 
-        user.setRequests(linkedList1);
 
-
+        Requests requests1 = new Requests();
+        requests1.setId(1);
+        requests1.setState(2);
+        System.out.println(requests1);
 
     }
 

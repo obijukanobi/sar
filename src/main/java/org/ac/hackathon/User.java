@@ -90,4 +90,19 @@ public class User {
     public void setRequests(LinkedList<Requests> requests) {
         this.requests = requests;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", local='" + local + '\'' +
+                ", contact='" + contact + '\'' +
+                ", password='" + password + '\'' +
+                ", photo='" + photo + '\'' +
+                ", foodPreferences=" + foodPreferences +
+                ", themePreferences=" + themePreferences +
+                ", requests=" + requests +
+                '}';
+    }
 }

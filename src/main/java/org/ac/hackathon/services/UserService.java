@@ -39,7 +39,7 @@ public interface UserService {
      *
      * @return the request list
      */
-    List<Requests> list();
+    List<Requests> list(Integer id);
 
     /**
      * Gets the list of foodPreferences
@@ -56,7 +56,7 @@ public interface UserService {
      * @param id the user id
      * @return the list of themePreferences of the user
      */
-    List<String> listthemePreferences(Integer id);
+    List<String> listThemePreferences(Integer id);
 
 
     /**
