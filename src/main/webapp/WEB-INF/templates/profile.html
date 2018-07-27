@@ -7,41 +7,42 @@
 <div class="container">
     <form class="form-horizontal" th:object="${user}" th:action="@{/match}" method="post">
         <div id="header">
-            <h1 th:text="user.name">Customer Details</h1>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" th:field="*{local}"/>
+            <h1 class="title" style="margin-bottom: 30px;" th:text="${user.name}">User Details</h1>
+            <div class="col-sm-12" style="margin-bottom: 40px;">
+                <input type="text" class="form-control col-sm-12 input" style="height: 80px" th:field="*{local}"/>
             </div>
         </div>
-        <div id="middle">
-            <div id="food">
+        <br/>
+        <div id="middle" style="background-color: transparent" class="form-group">
+            <div id="food" style="margin-top: 50px; background-color: transparent">
                 <h2>I want to eat...</h2>
-                <select name="food">
+                <select class="form-control input" name="food">
                     <option value="Chinese">Chinese</option>
                     <option value="Italian">Italian</option>
                     <option value="Burgers">Burgers</option>
                     <option value="Stuff">Stuff</option>
                 </select>
             </div>
-            <div id="topics">
+            <div id="topics" style="background-color: transparent">
                 <h2>I want to talk about...</h2>
-                <select name="topics">
-                    <option value="a">Volvo</option>
-                    <option value="b">Saab</option>
-                    <option value="c">Fiat</option>
-                    <option value="d">Audi</option>
+                <select class="form-control input" name="topics">
+                    <option value="a">Koala's diseases</option>
+                    <option value="b">Pen brands</option>
+                    <option value="c">Weirdest pet name</option>
+                    <option value="d">How to be a trashman</option>
                 </select>
             </div>
             <div id="contacts">
                 <h2>Reach me at..</h2>
-                <p th:text="user.contact">cenas</p>
+                <p>960000000</p>
             </div>
         </div>
         <div id="buttons">
             <div>
-                <button type="submit" class="btn btn-primary" name="action" value="search">Search</button>
+                <button type="submit" class="btn btn-primary col-sm-12" name="action" value="search">Search</button>
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" name="action" value="invitations">Invitations</button>
+                <button type="submit" class="btn btn-primary col-sm-12" name="action" value="invitations">Invitations</button>
             </div>
         </div>
     </form>

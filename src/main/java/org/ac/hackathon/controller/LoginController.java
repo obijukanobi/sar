@@ -53,7 +53,6 @@ public class LoginController {
     public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
             bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
-
         List<User> users = userService.findAll();
 
         for (User user : users) {
@@ -70,7 +69,7 @@ public class LoginController {
             return "customer/add-update";
         }*/
 
-        return "login";
+        return "redirect:/";
     }
 
 
@@ -106,7 +105,7 @@ public class LoginController {
         return "redirect:register";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/user/null"})
+    @RequestMapping(method = RequestMethod.POST, path = {"/user/null", "user/99"})
     public String backLogin() {
 
         return "redirect:/";

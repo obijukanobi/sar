@@ -9,39 +9,38 @@
         <div id="header">
             <h1 class="title" th:text="${user.name}">User Details</h1>
         </div>
-        <div id="middle">
-            <div id="food" class="col-sm-6">
+        <div id="middle" style="display: flow-root">
+            <div id="food" class="col-sm-12">
                 <h2>I want to eat...</h2>
-                <tr th:each="foodpreference : ${foodPreferences}">
-                    <td th:text="${foodpreference}"></td>
                     <ul>
-                        <li>Sushi</li>
-                        <li>Mexican</li>
+                        <li><h1>Sushi</h1></li>
                     </ul>
-                </tr>
             </div>
-            <div id="topics" class="col-sm-6">
+            <div class="col-sm-2" style="background-color: transparent"></div>
+            <div id="topics" class="col-sm-12">
                 <h2>I want to talk about...</h2>
-                <tr th:each="themepreference : ${themePreferences}">
                     <ul>
-                        <li>Weirdest pets names</li>
-                        <li>Pandas</li>
+                        <li><h1>Weirdest pets names</h1></li>
                     </ul>
-                </tr>
+            </div>
+            <div class="col-sm-2" style="background-color: transparent"></div>
+            <div id="contacts" class="col-sm-12">
+                <h2>Call me at</h2>
+                <ul>
+                    <li><h1>960000000</h1></li>
+                </ul>
             </div>
         </div>
         <div id="buttons">
             <div>
-                <button type="submit" class="btn btn-primary col-sm-3" name="action" value="previous">Previous</button>
+                <button type="submit" class="btn btn-primary col-sm-6" name="action" value="previous">Previous</button>
             </div>
             <div class="col-sm-1"></div>
             <div>
-                <button type="submit" class="btn btn-primary col-sm-4" name="action" value="invite">Invite</button>
+                <button type="submit" class="btn btn-primary col-sm-6" name="action" value="invite">Invite</button>
             </div>
             <div class="col-sm-1"></div>
-            <div>
-                <button type="submit" class="btn btn-primary col-sm-3" name="action" value="next">Next</button>
-            </div>
+
         </div>
     </form>
 </div>
