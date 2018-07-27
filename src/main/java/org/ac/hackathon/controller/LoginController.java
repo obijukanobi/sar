@@ -112,8 +112,8 @@ public class LoginController {
         return "redirect:/";
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=invitations")
-    public String invites(Model model) {
+    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=search")
+    public String search(Model model) {
 
         User user = new User();
         user.setContact("Lisboa");
@@ -126,6 +126,13 @@ public class LoginController {
 
 
         return "matchtoinvite";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=invitations")
+    public String invites(Model model) {
+
+
+        return "matchlist";
     }
 
 }
