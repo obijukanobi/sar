@@ -88,6 +88,11 @@ public class UserServiceImpl implements UserService {
         return user.getThemePreferences();
     }
 
+    @Transactional
+    @Override
+    public List<User> findAll(){
+        return userDao.findAll();
+    }
 
 
 

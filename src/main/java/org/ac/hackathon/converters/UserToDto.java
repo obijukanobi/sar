@@ -22,6 +22,7 @@ public class UserToDto extends  AbstractConverter<User, UserDto>{
         userDto.setFoodPreferences(user.getFoodPreferences());
         userDto.setThemePreferences(user.getThemePreferences());
         userDto.setRequests(user.getRequests());
+        userDto.setPassword(user.getPassword());
 
         return userDto;
     }

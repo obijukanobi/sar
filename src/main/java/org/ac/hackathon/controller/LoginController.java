@@ -1,21 +1,28 @@
 package org.ac.hackathon.controller;
 
 import org.ac.hackathon.User;
+import org.ac.hackathon.command.UserDto;
 import org.ac.hackathon.converters.DtotoUser;
 import org.ac.hackathon.converters.UserToDto;
 import org.ac.hackathon.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+
+import java.util.List;
 
 /**
  * Created by codecadet on 26/07/2018.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("")
 public class LoginController {
     private UserService userService;
 
@@ -31,9 +38,41 @@ public class LoginController {
     */
 
     @RequestMapping("/")
-    public String home() {
+    public String home(Model model) {
+
+        UserDto userDto = new UserDto();
+
+        model.addAttribute("user", userDto);
+
+
         return "login";
     }
+
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/checkCredentials"}, params = "action=login")
+    public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
+            bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
+
+        List<User> users = userService.findAll();
+
+        for (User user : users) {
+
+            if (userDto.getContact().equals(user.getContact())) {
+
+                model.addAttribute("user", user);
+
+                return "profile";
+            }
+        }
+
+        /*if (bindingResult.hasErrors()) {
+            return "customer/add-update";
+        }*/
+
+        return "login";
+    }
+
 
     @RequestMapping(method = RequestMethod.GET, path = "/{id}")
     public String showCustomer(@PathVariable Integer id, Model model) {
@@ -41,7 +80,7 @@ public class LoginController {
 
         model.addAttribute("user", userToDto.convert(user));
 
-        return "matching/profile";
+        return "profile";
     }
 
     @Autowired

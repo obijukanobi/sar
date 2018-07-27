@@ -1,12 +1,15 @@
 package org.ac.hackathon.command;
 
 import org.ac.hackathon.Requests;
+import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
 
 /**
  * Created by codecadet on 26/07/2018.
  */
+
+@Repository
 public class UserDto {
 
     private Integer id;
@@ -14,6 +17,7 @@ public class UserDto {
     private String local;
     private String contact;
     private String photo;
+    private String password;
 
     private LinkedList<String> foodPreferences;
     private LinkedList <String> themePreferences;
@@ -23,9 +27,18 @@ public class UserDto {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 
     public String getName() {
         return name;

@@ -1,5 +1,7 @@
 package org.ac.hackathon;
 
+import java.util.List;
+
 /**
  * Created by codecadet on 26/07/2018.
  */
@@ -7,6 +9,8 @@ public class Requests {
 
     private int id;
     private int state;
+    private Integer did;
+    private List<String> matches;
 
     public int getId() {
         return id;

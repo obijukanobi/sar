@@ -33,7 +33,8 @@ public class DtotoUser implements Converter<UserDto, User>{
         user.setLocal(userDto.getLocal());
         user.setName(userDto.getName());
         user.setRequests(userDto.getRequests());
-        user.setThemePreferences(user.getThemePreferences());
+        user.setThemePreferences(userDto.getThemePreferences());
+        user.setPassword(userDto.getPassword());
 
         return user;
     }

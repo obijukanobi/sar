@@ -59,6 +59,9 @@ public interface UserService {
     List<String> listThemePreferences(Integer id);
 
 
+    public List<User> findAll();
+
+
     /**
      * Adds requests to the foodPreferences
      *

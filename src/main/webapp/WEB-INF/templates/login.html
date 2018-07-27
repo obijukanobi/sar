@@ -11,7 +11,7 @@
 
     <div class="row">
         <div class="col-sm-8">
-            <form class="form-horizontal" th:action="@{/profile}" method="post">
+            <form class="form-horizontal" th:object="${user}" th:action="@{/profile}" method="post">
 
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Email:</label>
