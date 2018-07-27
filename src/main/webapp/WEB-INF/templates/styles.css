@@ -1,0 +1,13 @@
+.button{
+    width: 400px;
+    height: 70px;
+    object-fit: contain;
+    background-color: #0072bc;
+}
+
+.input{
+    width: 400px;
+    height: 70px;
+    object-fit: contain;
+    background-color: #ebebeb;
+}
