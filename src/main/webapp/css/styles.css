@@ -13,9 +13,14 @@ body{
 .input{
     height: 120px;
     object-fit: contain;
-    font-size: 40px !important;
+    font-size: 30px !important;
     font-family: 'Roboto', sans-serif;
     text-align: center;
+}
+
+.form-control select{
+    text-align: center;
+    font-size: 25px;
 }
 
 .form-horizontal .row{
@@ -36,6 +41,7 @@ body{
     color: aliceblue;
     text-align: center;
     margin-top:30vw;
+    margin-bottom: 10vw;
 }
 
 .registertitle{
@@ -52,10 +58,23 @@ body{
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     text-align: center;
+    margin-bottom:30px
 }
 
 #middle div{
     background: rgba(255,255,255,0.5);
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+
+#middle li{
+    margin-bottom: 10px;
+}
+
+#middle{
+    margin-bottom: 10vw;
 }
 /*
 .form-group label{
@@ -75,5 +94,8 @@ body{
     margin-top:30vw;
 }
 
+#middle h1{
+    font-size: 40px;
+}
 
 
