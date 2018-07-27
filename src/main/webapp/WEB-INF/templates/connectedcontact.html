@@ -18,19 +18,15 @@
         <div id="middle">
             <div id="food">
                 <h2>I want to eat...</h2>
-                <ol>
-                    <li>Coffee</li>
-                    <li>Tea</li>
-                    <li>Milk</li>
-                </ol>
+                <tr th:each="foodpreference : ${foodPreferences}">
+                    <td th:text="${foodpreference}"></td>
+                </tr>
             </div>
             <div id="topics">
                 <h2>I want to talk about...</h2>
-                <ol>
-                    <li>Stuff</li>
-                    <li>Things</li>
-                    <li>Random</li>
-                </ol>
+                <tr th:each="themepreference : ${themePreferences}">
+                    <td th:text="${themepreference}"></td>
+                </tr>
             </div>
         </div>
         <div id="buttons">

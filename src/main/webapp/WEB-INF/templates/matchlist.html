@@ -13,16 +13,14 @@
     <div th:if="${not #lists.isEmpty(users)}">
         <table class="table table-striped">
             <tr>
-                <th>Id</th>
-                <th>First Name</th>
+                <th>Name</th>
                 <th>Location</th>
                 <th>Show</th>
             </tr>
             <tr th:each="request : ${requests}">
-                <td th:text="${user.id}"></td>
                 <td th:text="${user.name}"></td>
                 <td th:text="${user.local}"></td>
-                <td><a class="btn btn-success" th:href="@{'/user/' + ${user.id}}">View</a></td>
+                <td><a class="btn btn-success" th:href="@{'/user/' + ${user.id}}">Show</a></td>
         </table>
 
     </div>
