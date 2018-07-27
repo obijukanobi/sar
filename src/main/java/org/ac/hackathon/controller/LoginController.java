@@ -112,4 +112,20 @@ public class LoginController {
         return "redirect:/";
     }
 
+    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=invitations")
+    public String invites(Model model) {
+
+        User user = new User();
+        user.setContact("Lisboa");
+        user.setFoodPreferences("Sushi");
+        user.setId(7);
+        user.setName("Marta");
+        user.setPhoto("94534");
+
+        model.addAttribute("user", userToDto.convert(user));
+
+
+        return "matchtoinvite";
+    }
+
 }
