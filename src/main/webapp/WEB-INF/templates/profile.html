@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <thymeleaf th:replace="header :: header" />
+    <thymeleaf th:replace="header :: header"/>
 </head>
 <body>
 <div class="container">
-
-    <h2>Customer Details</h2>
+    <form class="form-horizontal" th:object="${user}" th:action="@{/match}" method="post">
+        <div id="header">
+            <h1 th:text="user.name">Customer Details</h1>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" th:field="*{user.local}"/>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="food">
+                <h2>I want to eat...</h2>
+                <select name="food">
+                    <option value="Chinese">Chinese</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Burgers">Burgers</option>
+                    <option value="Stuff">Stuff</option>
+                </select>
+            </div>
+            <div id="topics">
+                <h2>I want to talk about...</h2>
+                <select name="topics">
+                    <option value="a">Volvo</option>
+                    <option value="b">Saab</option>
+                    <option value="c">Fiat</option>
+                    <option value="d">Audi</option>
+                </select>
+            </div>
+            <div id="contacts">
+                <h2>Reach me at..</h2>
+                <p th:text="user.contact">cenas</p>
+            </div>
+        </div>
+        <div id="buttons">
+            <div>
+                <button type="submit" class="btn btn-primary" name="action" value="search">Search</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" name="action" value="invitations">Invitations</button>
+            </div>
+        </div>
+    </form>
 </div>
 </body>
 </html>

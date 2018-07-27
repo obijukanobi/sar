@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <thymeleaf th:replace="header :: header"/>
+</head>
+<body>
+<div class="container">
+    <form class="form-horizontal" th:object="${user}" th:action="@{/match}" method="post">
+        <div id="header">
+            <h1 th:text="user.name">User Details</h1>
+            <div class="col-sm-10">
+                <h2 th:text="${'Name: ' + user.name}"></h2>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="food">
+                <h2>I want to eat...</h2>
+                <ol>
+                    <li>Coffee</li>
+                    <li>Tea</li>
+                    <li>Milk</li>
+                </ol>
+            </div>
+            <div id="topics">
+                <h2>I want to talk about...</h2>
+                <ol>
+                    <li>Stuff</li>
+                    <li>Things</li>
+                    <li>Random</li>
+                </ol>
+            </div>
+        </div>
+        <div id="buttons">
+            <div>
+                <button type="submit" class="btn btn-primary" name="action" value="previous">Previous</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" name="action" value="invite">Invite</button>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" name="action" value="next">Next</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
