@@ -9,7 +9,6 @@ import java.util.List;
  * Created by codecadet on 26/07/2018.
  */
 
-@Repository
 public class UserDto {
 
     private Integer id;
