@@ -1,23 +1,21 @@
 .container, .full{
     background-image: url("/matching/img/login-back.jpg");
-    background-size: cover;
+   /* background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
-    height: -moz-available;          /* WebKit-based browsers will ignore this. */
-    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
-    height: fill-available;
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;*/
 }
 
-.login-row{
+/*.login-row{
     opacity: 0.8;
     width: 70vw;
     max-width: 500px;
-    top: 20%;
     margin: auto;
-    margin-top: 20vw;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
@@ -30,3 +28,14 @@
     flex-direction: column;
     justify-content: center;
 }
+
+@media only screen and (max-width: 768px) {
+
+    .form-group{
+        max-width: 90%;
+    }
+
+    .input {
+        width: 100%;
+    }
+}*/

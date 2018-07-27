@@ -10,6 +10,7 @@
     height: 70px;
     object-fit: contain;
     background-color: #ebebeb;
+    font-size: 20px;
 }
 
 .full{
@@ -22,7 +23,8 @@
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
     padding: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: aliceblue;
 }
 
 .form-group label{
@@ -30,6 +32,7 @@
     font-size: 15px;
     padding-bottom: 10px;
     display: inline-flex;
+    display: none;
 }
 
 .form-group div{
