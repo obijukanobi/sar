@@ -27,15 +27,24 @@ public class RegistController {
 
         UserDto userDto = new UserDto();
 
+        userDto.setId(99);
+
+       /* userDto.setName("Joao");
+        userDto.setLocal("Lisboa");
+        userDto.setPassword("123");
+        userDto.setContact("kjkjkjk@gmail.com");
+        */
         model.addAttribute("user", userDto);
+
 
         return "register";
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=save")
     public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
             bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
 
         User user = dtotoUser.convert(userDto);
 
