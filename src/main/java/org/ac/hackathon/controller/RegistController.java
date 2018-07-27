@@ -1,6 +1,6 @@
 package org.ac.hackathon.controller;
 
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.converters.DtotoUser;
 import org.ac.hackathon.converters.UserToDto;
 import org.ac.hackathon.services.UserService;

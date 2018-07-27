@@ -1,4 +1,4 @@
-package org.ac.hackathon.services;
+package org.ac.hackathon;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;

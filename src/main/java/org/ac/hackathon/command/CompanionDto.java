@@ -1,9 +1,6 @@
 package org.ac.hackathon.command;
 
-import org.ac.hackathon.Requests;
 import org.springframework.stereotype.Repository;
-
-import java.util.LinkedList;
 
 /**
  * Created by codecadet on 26/07/2018.
@@ -15,8 +12,8 @@ public class CompanionDto {
     private Integer did;
     private String name;
     private String local;
-    private String contact;
-    private String photo;
+    private String contact; //email
+    private String photo; //phone
 
 
     public Integer getId() {

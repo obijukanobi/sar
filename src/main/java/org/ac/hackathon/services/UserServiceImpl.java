@@ -1,7 +1,7 @@
 package org.ac.hackathon.services;
 
-import org.ac.hackathon.Requests;
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.Requests;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.persistence.dao.RequestDao;
 import org.ac.hackathon.persistence.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public List<String> listFoodPreferences(Integer id) {
+    public String listFoodPreferences(Integer id) {
         User user = userDao.findById(id);
 
         if (user == null) {
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
     }
     @Transactional
     @Override
-    public List<String> listThemePreferences(Integer id) {
+    public String listThemePreferences(Integer id) {
 
         User user = userDao.findById(id);
 
