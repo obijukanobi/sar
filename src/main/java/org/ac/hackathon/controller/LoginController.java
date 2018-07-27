@@ -97,4 +97,19 @@ public class LoginController {
     public void setDtotoUser(DtotoUser dtotoUser) {
         this.dtotoUser = dtotoUser;
     }
+
+
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
+    public String regist() {
+
+        return "redirect:register";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/user/null"})
+    public String backLogin() {
+
+        return "redirect:/";
+    }
+
 }
