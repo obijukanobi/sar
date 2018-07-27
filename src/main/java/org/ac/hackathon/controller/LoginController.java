@@ -58,7 +58,7 @@ public class LoginController {
 
         for (User user : users) {
 
-            if (userDto.getContact().equals(user.getContact())) {
+            if (user != null && user.getContact().equals(userDto.getContact())) {
 
                 model.addAttribute("user", userToDto.convert(user));
 

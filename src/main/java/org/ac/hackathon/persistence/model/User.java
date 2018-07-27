@@ -5,7 +5,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -37,8 +36,8 @@ public class User {
     private String password;
     private String photo;
 
-    private List<String> foodPreferences;
-    private List<String> themePreferences;
+    private String foodPreferences;
+    private String themePreferences;
 
     @OneToMany(
             // propagate changes on customer entity to account entities
@@ -102,19 +101,19 @@ public class User {
         this.photo = photo;
     }
 
-    public List<String> getFoodPreferences() {
+    public String getFoodPreferences() {
         return foodPreferences;
     }
 
-    public void setFoodPreferences(List<String> foodPreferences) {
+    public void setFoodPreferences(String foodPreferences) {
         this.foodPreferences = foodPreferences;
     }
 
-    public List<String> getThemePreferences() {
+    public String getThemePreferences() {
         return themePreferences;
     }
 
-    public void setThemePreferences(List<String> themePreferences) {
+    public void setThemePreferences(String themePreferences) {
         this.themePreferences = themePreferences;
     }
 

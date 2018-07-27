@@ -47,7 +47,7 @@ public interface UserService {
      * @param id the user id
      * @return the list of foodPreferences of the user
      */
-    List<String> listFoodPreferences(Integer id);
+    String listFoodPreferences(Integer id);
 
 
     /**
@@ -56,7 +56,7 @@ public interface UserService {
      * @param id the user id
      * @return the list of themePreferences of the user
      */
-    List<String> listThemePreferences(Integer id);
+    String listThemePreferences(Integer id);
 
 
     public List<User> findAll();

@@ -3,7 +3,6 @@ package org.ac.hackathon.command;
 import org.ac.hackathon.persistence.model.Requests;
 import org.springframework.stereotype.Repository;
 
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -20,8 +19,8 @@ public class UserDto {
     private String photo;
     private String password;
 
-    private List<String> foodPreferences;
-    private List<String> themePreferences;
+    private String foodPreferences;
+    private String themePreferences;
     private List<Requests> requests;
 
     public Integer getId() {
@@ -73,19 +72,19 @@ public class UserDto {
         this.photo = photo;
     }
 
-    public List<String> getFoodPreferences() {
+    public String getFoodPreferences() {
         return foodPreferences;
     }
 
-    public void setFoodPreferences(List<String> foodPreferences) {
+    public void setFoodPreferences(String foodPreferences) {
         this.foodPreferences = foodPreferences;
     }
 
-    public List<String> getThemePreferences() {
+    public String getThemePreferences() {
         return themePreferences;
     }
 
-    public void setThemePreferences(List<String> themePreferences) {
+    public void setThemePreferences(String themePreferences) {
         this.themePreferences = themePreferences;
     }
 

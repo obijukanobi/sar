@@ -5,7 +5,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by codecadet on 26/07/2018.
@@ -55,7 +54,7 @@ public class Requests {
     private User userId; //user id
     private int state;
     private Integer destId; // destination id
-    private List<String> matches;
+    private String matches;
 
     public User getUserId() {
         return userId;
@@ -81,11 +80,11 @@ public class Requests {
         this.destId = destId;
     }
 
-    public List<String> getMatches() {
+    public String getMatches() {
         return matches;
     }
 
-    public void setMatches(List<String> matches) {
+    public void setMatches(String matches) {
         this.matches = matches;
     }
 

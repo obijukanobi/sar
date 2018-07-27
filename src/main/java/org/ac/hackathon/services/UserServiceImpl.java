@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public List<String> listFoodPreferences(Integer id) {
+    public String listFoodPreferences(Integer id) {
         User user = userDao.findById(id);
 
         if (user == null) {
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
     }
     @Transactional
     @Override
-    public List<String> listThemePreferences(Integer id) {
+    public String listThemePreferences(Integer id) {
 
         User user = userDao.findById(id);
 

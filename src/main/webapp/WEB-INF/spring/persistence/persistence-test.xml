@@ -11,7 +11,7 @@
             To keep the database open, DB_CLOSE_DELAY=-1 is required
         -->
         <property name="driverClassName" value="org.h2.Driver"/>
-        <property name="url" value="jdbc:h2:mem:javabank;DB_CLOSE_DELAY=-1"/>
+        <property name="url" value="jdbc:h2:mem:matching;DB_CLOSE_DELAY=-1"/>
         <property name="username" value="sa"/>
         <property name="password" value=""/>
     </bean>
@@ -19,7 +19,7 @@
     <bean id="emFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="org.academiadecodigo.javabank.persistence.model"/>
+        <property name="packagesToScan" value="org.ac.hackathon.persistence.model"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
