@@ -1,5 +1,5 @@
-body{
-    background-image: url("/matching/img/login-back.jpg");
+.login{
+    background-image: url("/matching/img/login-back.jpg") !important;
    /* background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
