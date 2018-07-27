@@ -2,12 +2,14 @@ package org.ac.hackathon.services;
 
 import org.ac.hackathon.Requests;
 import org.ac.hackathon.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
  * Created by codecadet on 26/07/2018.
  */
+@Service
 public class UserServiceimpl implements UserService {
 
 
