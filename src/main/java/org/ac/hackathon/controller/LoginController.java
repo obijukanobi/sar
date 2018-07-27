@@ -27,7 +27,6 @@ import java.util.List;
 public class LoginController {
 
     private UserService userService;
-    private RequestService requestService;
     private UserToDto userToDto;
     private DtotoUser dtotoUser;
 
@@ -103,13 +102,6 @@ public class LoginController {
         return userService;
     }
 
-    public RequestService getRequestService() {
-        return requestService;
-    }
-    @Autowired
-    public void setRequestService(RequestService requestService) {
-        this.requestService = requestService;
-    }
 
     public UserToDto getUserToDto() {
         return userToDto;
@@ -162,17 +154,6 @@ public class LoginController {
         return "connectedcontact";
     }
 
-
-    @RequestMapping(method = RequestMethod.GET, path = "/{id}")
-    public String acceptInvite(@PathVariable Integer id, Model model) {
-
-
-        User user = userService.getUser(id);
-
-        model.addAttribute("user", userToDto.convert(user));
-
-        return "profile";
-    }
 
 
 }
