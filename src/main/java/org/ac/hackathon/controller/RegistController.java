@@ -1,31 +1,55 @@
 package org.ac.hackathon.controller;
 
+import org.ac.hackathon.command.UserDto;
 import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.converters.DtotoUser;
-import org.ac.hackathon.converters.UserToDto;
 import org.ac.hackathon.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 
 @Controller
 @RequestMapping("/register")
 public class RegistController {
 
     private UserService userService;
-    private UserToDto userToDto;
     private DtotoUser dtotoUser;
+
 
     @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String showRegist(Model model) {
-        User user = new User();
 
-        model.addAttribute("user", userToDto.convert(user));
+        UserDto userDto = new UserDto();
+
+        model.addAttribute("user", userDto);
 
         return "register";
+    }
+
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
+    public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
+            bindingResult, RedirectAttributes redirectAttributes, Model model) {
+
+        User user = dtotoUser.convert(userDto);
+
+        userService.save(user);
+
+        model.addAttribute("user", userDto);
+
+        return "profile";
+
+
+        /*if (bindingResult.hasErrors()) {
+            return "customer/add-update";
+        }*/
+
     }
 
     @Autowired
@@ -33,10 +57,6 @@ public class RegistController {
         this.userService = userService;
     }
 
-    @Autowired
-    public void setUserToDto(UserToDto userToDto) {
-        this.userToDto = userToDto;
-    }
 
     @Autowired
     public void setDtotoUser(DtotoUser dtotoUser) {
