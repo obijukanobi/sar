@@ -49,10 +49,28 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
-    public String checkCredentials() {
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=login")
+    public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
+            bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
-        return "redirect:/register";
+
+        List<User> users = userService.findAll();
+
+        for (User user : users) {
+
+            if (user != null && user.getContact().equals(userDto.getContact())) {
+
+                model.addAttribute("user", userToDto.convert(user));
+
+                return "profile";
+            }
+        }
+
+        /*if (bindingResult.hasErrors()) {
+            return "customer/add-update";
+        }*/
+
+        return "login";
     }
 
 
