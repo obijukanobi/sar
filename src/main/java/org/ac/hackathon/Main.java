@@ -14,6 +14,7 @@ public class Main {
         user.setId(1);
         user.setLocal("Lisboa");
         user.setContact("9999999999");
+        user.setPassword("000");
 
         LinkedList requests = new LinkedList();
         LinkedList foodPreferences = new LinkedList();

@@ -49,7 +49,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/checkCredentials"}, params = "action=login")
+    @RequestMapping(method = RequestMethod.POST, path = {"profile/"}, params = "action=login")
     public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
             bindingResult, RedirectAttributes redirectAttributes, Model model) {
 

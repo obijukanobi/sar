@@ -95,4 +95,22 @@ public class UserDto {
     public void setRequests(LinkedList<Requests> requests) {
         this.requests = requests;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserDto)) return false;
+
+        UserDto userDto = (UserDto) o;
+
+        if (contact != null ? !contact.equals(userDto.contact) : userDto.contact != null) return false;
+        return password != null ? password.equals(userDto.password) : userDto.password == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = contact != null ? contact.hashCode() : 0;
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        return result;
+    }
 }
