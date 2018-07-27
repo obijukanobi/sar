@@ -7,7 +7,7 @@
 <div class="container">
     <form class="form-horizontal" th:object="${user}" th:action="@{/match}" method="post">
         <div id="header">
-            <h1 th:text="user.name">User Details</h1>
+            <h1>User Details</h1>
             <div class="col-sm-10">
                 <h2 th:text="${'Name: ' + user.name}"></h2>
                 <h2 th:text="${'Location: ' + user.local}"></h2>
