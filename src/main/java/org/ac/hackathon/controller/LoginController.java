@@ -49,10 +49,28 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
-    public String checkCredentials() {
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=login")
+    public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
+            bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
-        return "redirect:/register";
+
+        List<User> users = userService.findAll();
+
+        for (User user : users) {
+
+            if (user != null && user.getContact().equals(userDto.getContact())) {
+
+                model.addAttribute("user", userToDto.convert(user));
+
+                return "profile";
+            }
+        }
+
+        /*if (bindingResult.hasErrors()) {
+            return "customer/add-update";
+        }*/
+
+        return "login";
     }
 
 
@@ -79,4 +97,35 @@ public class LoginController {
     public void setDtotoUser(DtotoUser dtotoUser) {
         this.dtotoUser = dtotoUser;
     }
+
+
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=register")
+    public String regist() {
+
+        return "redirect:register";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/user/null"})
+    public String backLogin() {
+
+        return "redirect:/";
+    }
+
+    @RequestMapping(method = RequestMethod.POST, path = {"/match"}, params = "action=invitations")
+    public String invites(Model model) {
+
+        User user = new User();
+        user.setContact("Lisboa");
+        user.setFoodPreferences("Sushi");
+        user.setId(7);
+        user.setName("Marta");
+        user.setPhoto("94534");
+
+        model.addAttribute("user", userToDto.convert(user));
+
+
+        return "matchtoinvite";
+    }
+
 }
