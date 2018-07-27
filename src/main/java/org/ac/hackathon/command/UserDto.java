@@ -1,9 +1,10 @@
 package org.ac.hackathon.command;
 
-import org.ac.hackathon.Requests;
+import org.ac.hackathon.persistence.model.Requests;
 import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by codecadet on 26/07/2018.
@@ -19,9 +20,9 @@ public class UserDto {
     private String photo;
     private String password;
 
-    private LinkedList<String> foodPreferences;
-    private LinkedList <String> themePreferences;
-    private LinkedList <Requests> requests;
+    private List<String> foodPreferences;
+    private List<String> themePreferences;
+    private List<Requests> requests;
 
     public Integer getId() {
         return id;
@@ -72,27 +73,27 @@ public class UserDto {
         this.photo = photo;
     }
 
-    public LinkedList<String> getFoodPreferences() {
+    public List<String> getFoodPreferences() {
         return foodPreferences;
     }
 
-    public void setFoodPreferences(LinkedList<String> foodPreferences) {
+    public void setFoodPreferences(List<String> foodPreferences) {
         this.foodPreferences = foodPreferences;
     }
 
-    public LinkedList<String> getThemePreferences() {
+    public List<String> getThemePreferences() {
         return themePreferences;
     }
 
-    public void setThemePreferences(LinkedList<String> themePreferences) {
+    public void setThemePreferences(List<String> themePreferences) {
         this.themePreferences = themePreferences;
     }
 
-    public LinkedList<Requests> getRequests() {
+    public List<Requests> getRequests() {
         return requests;
     }
 
-    public void setRequests(LinkedList<Requests> requests) {
+    public void setRequests(List<Requests> requests) {
         this.requests = requests;
     }
 

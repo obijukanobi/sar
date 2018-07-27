@@ -1,7 +1,7 @@
 package org.ac.hackathon.services;
 
-import org.ac.hackathon.Requests;
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.Requests;
+import org.ac.hackathon.persistence.model.User;
 
 import java.util.List;
 

@@ -1,5 +1,8 @@
 package org.ac.hackathon;
 
+import org.ac.hackathon.persistence.model.Requests;
+import org.ac.hackathon.persistence.model.User;
+
 import java.util.LinkedList;
 
 /**

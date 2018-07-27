@@ -1,7 +1,7 @@
 package org.ac.hackathon.services;
 
-import org.ac.hackathon.Requests;
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.Requests;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.persistence.dao.RequestDao;
 import org.ac.hackathon.persistence.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;

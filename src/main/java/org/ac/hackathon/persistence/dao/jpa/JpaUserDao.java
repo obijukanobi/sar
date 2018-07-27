@@ -1,6 +1,6 @@
 package org.ac.hackathon.persistence.dao.jpa;
 
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.persistence.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

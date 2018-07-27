@@ -1,6 +1,6 @@
 package org.ac.hackathon.controller;
 
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.command.UserDto;
 import org.ac.hackathon.converters.DtotoUser;
 import org.ac.hackathon.converters.UserToDto;
@@ -49,7 +49,7 @@ public class LoginController {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, path = {"profile/"}, params = "action=login")
+    @RequestMapping(method = RequestMethod.POST, path = {"/profile"}, params = "action=login")
     public String checkCredentials(@ModelAttribute("user") UserDto userDto, BindingResult
             bindingResult, RedirectAttributes redirectAttributes, Model model) {
 
@@ -60,7 +60,7 @@ public class LoginController {
 
             if (userDto.getContact().equals(user.getContact())) {
 
-                model.addAttribute("user", user);
+                model.addAttribute("user", userToDto.convert(user));
 
                 return "profile";
             }

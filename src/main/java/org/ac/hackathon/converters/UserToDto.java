@@ -1,6 +1,6 @@
 package org.ac.hackathon.converters;
 
-import org.ac.hackathon.User;
+import org.ac.hackathon.persistence.model.User;
 import org.ac.hackathon.command.UserDto;
 import org.springframework.stereotype.Component;
 
