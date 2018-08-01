@@ -130,8 +130,8 @@ public class LoginController {
         user.setContact("Lisboa");
         user.setFoodPreferences("Sushi");
         user.setId(7);
-        user.setName("Marta");
-        user.setPhoto("94534");
+        user.setName("Maria");
+        user.setPhoto("935826134");
 
         model.addAttribute("user", userToDto.convert(user));
 
